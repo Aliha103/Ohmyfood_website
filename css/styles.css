@@ -1,8 +1,80 @@
 /* main with location, presentation,steps and restaurants section */
 /* styling for computer screen which has screen resolution minimun 998px*/
 @media only screen and (min-width: 998px) {
-  /* styling for how this website works*/
-  #website-methodology {
+  body {
+    overflow-x: hidden;
+    width: 100%;
+    /* styling for ohmyfood website main page logo for mobile version */
+  }
+  body #header-index h1 {
+    text-align: center;
+    padding: 1% 0;
+  }
+  body #header-index h1 .site-logo {
+    width: 50vw;
+  }
+  body #main-section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    /* location of ohmyfood */
+    /* styling for description of ohmyfood main page for mobile version */
+    /* styling for how this website works*/
+    /* styling for section for restaurants*/
+  }
+  body #main-section #website-location {
+    display: flex;
+    width: 100%;
+    background-color: #eaeaea;
+    height: 70px;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto;
+    box-sizing: border-box;
+    box-shadow: 0px -5px 5px #D3D3D3;
+    gap: 2%;
+    font-weight: bold;
+  }
+  body #main-section #description-website {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: linear-gradient(white, #eaeaea);
+    font-family: Roboto;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 4%;
+    /* styling for quality of website for computer version */
+  }
+  body #main-section #description-website .description {
+    font-size: 2.5em;
+    align-items: center;
+    text-align: center;
+  }
+  body #main-section #description-website .quality-of-website {
+    align-items: center;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  body #main-section #description-website .explore-btn {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 45px;
+    color: white;
+    border-radius: 50px;
+    box-shadow: 4px 4px 2px #D3D3D3;
+    max-width: 250px;
+    cursor: pointer;
+    transition: 250ms;
+    background: linear-gradient(170deg, #ff79da, #9356dc);
+    border: none;
+    font-size: large;
+    padding: 15px;
+  }
+  body #main-section #website-methodology {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -10,7 +82,7 @@
     width: 100% !important;
     padding: 20px 2% !important;
   }
-  #website-methodology .selection {
+  body #main-section #website-methodology .selection {
     display: flex;
     width: 100% !important;
     flex-direction: row;
@@ -21,7 +93,7 @@
     cursor: pointer;
     transition: 250ms;
   }
-  #website-methodology .selection .selection-box {
+  body #main-section #website-methodology .selection .selection-box {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -36,7 +108,7 @@
     height: 30px !important;
     font-size: 16px;
   }
-  #website-methodology .selection .selection-box .selection-box__number {
+  body #main-section #website-methodology .selection .selection-box .selection-box__number {
     box-sizing: border-box;
     border-radius: 50%;
     background: #9356dc;
@@ -47,7 +119,7 @@
     align-items: center;
     margin-left: -40px;
   }
-  #website-methodology .selection .selection-box .selection-box__detail {
+  body #main-section #website-methodology .selection .selection-box .selection-box__detail {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -57,8 +129,7 @@
     margin: 20px;
     font-size: larger;
   }
-  /* styling for section for restaurants*/
-  #section-restaurants {
+  body #main-section #section-restaurants {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -66,16 +137,16 @@
     font-family: Roboto;
     width: 100% !important;
   }
-  #section-restaurants .section-restaurants__title {
+  body #main-section #section-restaurants .section-restaurants__title {
     padding-left: 2%;
   }
-  #section-restaurants .section-restaurants--cards {
+  body #main-section #section-restaurants .section-restaurants--cards {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     padding-left: 2%;
   }
-  #section-restaurants .section-restaurants--cards .section-restaurants__card {
+  body #main-section #section-restaurants .section-restaurants--cards .section-restaurants__card {
     box-shadow: 0px 5px 5px #D3D3D3;
     margin: 1rem;
     border-radius: 20px !important;
@@ -87,16 +158,16 @@
     margin-bottom: 20px !important;
     flex: 100% !important;
   }
-  #section-restaurants .section-restaurants--cards .section-restaurants__card .section-restaurants__link {
+  body #main-section #section-restaurants .section-restaurants--cards .section-restaurants__card .section-restaurants__link {
     text-decoration: none;
     color: black;
   }
-  #section-restaurants .section-restaurants--cards .section-restaurants__card .section-restaurants__link .section-restaurants__new-and__img {
+  body #main-section #section-restaurants .section-restaurants--cards .section-restaurants__card .section-restaurants__link .section-restaurants__new-and__img {
     position: relative;
     width: 90vw !important;
     max-width: 100%;
   }
-  #section-restaurants .section-restaurants--cards .section-restaurants__card .section-restaurants__link .section-restaurants__new-and__img .section-restaurants__new {
+  body #main-section #section-restaurants .section-restaurants--cards .section-restaurants__card .section-restaurants__link .section-restaurants__new-and__img .section-restaurants__new {
     background-color: #99e2d0;
     color: #1a8a68;
     display: block;
@@ -112,7 +183,7 @@
     z-index: 1;
     font-weight: bold;
   }
-  #section-restaurants .section-restaurants--cards .section-restaurants__card .section-restaurants__link .section-restaurants__new-and__img .section-restaurants__card__img {
+  body #main-section #section-restaurants .section-restaurants--cards .section-restaurants__card .section-restaurants__link .section-restaurants__new-and__img .section-restaurants__card__img {
     width: 100% !important;
     height: 300px;
     -o-object-fit: cover;
@@ -120,33 +191,33 @@
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
   }
-  #section-restaurants .section-restaurants--cards .section-restaurants__card .section-restaurants__details {
+  body #main-section #section-restaurants .section-restaurants--cards .section-restaurants__card .section-restaurants__details {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 0 4%;
   }
-  #section-restaurants .section-restaurants--cards .section-restaurants__card .section-restaurants__details .section-restaurants__link_details {
+  body #main-section #section-restaurants .section-restaurants--cards .section-restaurants__card .section-restaurants__details .section-restaurants__link_details {
     text-decoration: none;
     color: black;
   }
-  #section-restaurants .section-restaurants--cards .section-restaurants__card .section-restaurants__details .section-restaurants__details__heart {
+  body #main-section #section-restaurants .section-restaurants--cards .section-restaurants__card .section-restaurants__details .section-restaurants__details__heart {
     font-size: x-large;
     height: 20px !important;
     display: flex;
     margin-top: 20px;
     cursor: pointer;
   }
-  #section-restaurants .section-restaurants--cards .section-restaurants__card .section-restaurants__details .section-restaurants__details__heart i {
+  body #main-section #section-restaurants .section-restaurants--cards .section-restaurants__card .section-restaurants__details .section-restaurants__details__heart i {
     display: block;
   }
-  #section-restaurants .section-restaurants--cards .section-restaurants__card .section-restaurants__details .section-restaurants__details__heart i.fas {
+  body #main-section #section-restaurants .section-restaurants--cards .section-restaurants__card .section-restaurants__details .section-restaurants__details__heart i.fas {
     display: none;
   }
-  #section-restaurants .section-restaurants--cards .section-restaurants__card .section-restaurants__details .section-restaurants__details__heart:hover i.far {
+  body #main-section #section-restaurants .section-restaurants--cards .section-restaurants__card .section-restaurants__details .section-restaurants__details__heart:hover i.far {
     display: none;
   }
-  #section-restaurants .section-restaurants--cards .section-restaurants__card .section-restaurants__details .section-restaurants__details__heart:hover i.fas {
+  body #main-section #section-restaurants .section-restaurants--cards .section-restaurants__card .section-restaurants__details .section-restaurants__details__heart:hover i.fas {
     display: block;
     color: #9356dc;
   }
@@ -199,6 +270,7 @@
     border-top-right-radius: 100px;
     background: linear-gradient(white, #eaeaea);
     margin-top: -200px;
+    /* stlying for order btn for computer version*/
   }
   body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant__name_heart {
     display: flex;
@@ -219,8 +291,11 @@
     font-family: Roboto;
     flex-wrap: wrap;
     padding-left: 2%;
+    padding-bottom: 20px;
   }
   body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant--food--section .restaurant--courses--section {
+    display: flex;
+    flex-direction: column;
     width: 30%;
     margin: 10px;
   }
@@ -239,6 +314,7 @@
   body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant--food--section .restaurant--courses--section .dish__menu__card {
     white-space: nowrap;
     display: flex;
+    flex-direction: row;
     box-sizing: border-box;
     border-radius: 20px;
     box-shadow: 0px 5px 5px #D3D3D3;
@@ -295,6 +371,33 @@
     width: 70px;
     text-align: center;
     align-items: center;
+  }
+  body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .order__btn__section {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    align-items: center;
+    padding-bottom: 50px;
+  }
+  body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .order__btn__section .explore-btn {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 45px;
+    color: white;
+    border-radius: 50px;
+    box-shadow: 4px 4px 2px #D3D3D3;
+    width: 150px;
+    max-width: 500px;
+    cursor: pointer;
+    transition: 250ms;
+    background: linear-gradient(170deg, #ff79da, #9356dc);
+    border: none;
+    font-size: large;
+    padding: 15px;
   }
   /*styling footer for ohmyfood website*/
   #footer__ohmyfood {
@@ -754,5 +857,32 @@
     width: 70px;
     text-align: center;
     align-items: center;
+  }
+  body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .order__btn__section {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+    align-items: center;
+    padding-bottom: 50px;
+  }
+  body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .order__btn__section .explore-btn {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 45px;
+    color: white;
+    border-radius: 50px;
+    box-shadow: 4px 4px 2px #D3D3D3;
+    width: 150px;
+    max-width: 500px;
+    cursor: pointer;
+    transition: 250ms;
+    background: linear-gradient(170deg, #ff79da, #9356dc);
+    border: none;
+    font-size: large;
+    padding: 15px;
   }
 }/*# sourceMappingURL=styles.css.map */
