@@ -406,7 +406,7 @@ $footer-color: white;
                                     }
 
                                     .card__check .fas.fa-check-circle {
-                                        animation: rotateIcon 1s linear 1;
+                                        animation: rotateIcon 0.2s linear 1;
                                     }
                                 }
 
@@ -545,11 +545,11 @@ $footer-color: white;
 
 @keyframes rotateIcon {
     0% {
-        transform: rotate(0deg);
+        transform: rotate(-45deg);
     }
 
     100% {
-        transform: rotate(130deg);
+        transform: rotate(0deg);
     }
 }
 

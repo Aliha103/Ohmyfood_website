@@ -335,7 +335,7 @@
     transform: translateX(-200%);
   }
   body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant--food--section .restaurant--courses--section .dish__menu__card:hover .card__check .fas.fa-check-circle {
-    animation: rotateIcon 1s linear 1;
+    animation: rotateIcon 0.2s linear 1;
   }
   body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant--food--section .restaurant--courses--section .dish__menu__card .order__details {
     display: flex;
@@ -443,10 +443,10 @@
 }
 @keyframes rotateIcon {
   0% {
-    transform: rotate(0deg);
+    transform: rotate(-45deg);
   }
   100% {
-    transform: rotate(130deg);
+    transform: rotate(0deg);
   }
 }
 /* styling for tablet screen which has screen resolution minimun 768px and maximum 998px */
