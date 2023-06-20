@@ -1,17 +1,100 @@
+/* styling for loader of main page */
+#loader {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: hsla(0, 0%, 100%, 0.9);
+  animation: loader 0.01s;
+  animation-delay: 1.75s;
+  animation-fill-mode: forwards;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#loader .loader__itemContainer {
+  display: flex;
+  width: 5rem;
+  justify-content: space-between;
+}
+#loader .loader__itemContainer .loader__item--1 {
+  background-color: #9356dc;
+}
+#loader .loader__itemContainer .loader__item--2 {
+  background-color: #ff79da;
+  animation-delay: 0.25s;
+}
+#loader .loader__itemContainer .loader__item--3 {
+  background-color: #99e2d0;
+  animation-delay: 0.5s;
+}
+#loader .loader__itemContainer .loader__item {
+  height: 1rem;
+  width: 1rem;
+  border-radius: 1rem;
+  animation: jump 1s;
+  animation-iteration-count: 1;
+}
+
+@keyframes loader {
+  100% {
+    opacity: 0;
+    z-index: -10;
+  }
+}
+@keyframes jump {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(0.5rem);
+  }
+  75% {
+    transform: translateY(-0.5rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+header,
+main,
+footer {
+  animation-name: opacity;
+  animation-duration: 2500ms;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 0s;
+  animation-timing-function: cubic-bezier(1, -0.25, 0.93, 0.59);
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /* main with location, presentation,steps and restaurants section */
 /* styling for computer screen which has screen resolution minimun 998px*/
 @media only screen and (min-width: 998px) {
   body {
     overflow-x: hidden;
     width: 100%;
-    /* styling for ohmyfood website main page logo for mobile version */
+    scroll-behavior: smooth;
+    /*styling for ohmyfood website loading*/
+    /* styling for ohmyfood website main page logo for computer version */
   }
-  body #header-index h1 {
+  body #header-index {
     text-align: center;
     padding: 1% 0;
+    z-index: 1000;
   }
-  body #header-index h1 .site-logo {
+  body #header-index .site-logo {
     width: 50vw;
+    z-index: 1000;
   }
   body #main-section {
     display: flex;
@@ -221,216 +304,217 @@
     display: block;
     color: #9356dc;
   }
-  /* styling for restaurants website page*/
-  /* styling for header-restaurants*/
-  body {
-    overflow-x: hidden;
-  }
-  body #header-restaurants {
-    width: 100% !important;
-    padding: 40px;
-  }
-  body #header-restaurants .header-restaurants__link {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    text-decoration: none;
-    color: black !important;
-  }
-  body #header-restaurants .header-restaurants__link .header-restaurants__link_logo {
-    font-family: Shrikhand;
-    position: absolute;
-    left: 40%;
-    transform: translate(-20%, 0%);
-  }
-  body #restaurant-main-section {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    width: 100%;
-  }
-  body #restaurant-main-section .restaurant-main-section__img {
-    -o-object-fit: cover;
-       object-fit: cover;
-    width: 100%;
-    height: 40%;
-  }
-  body #restaurant-main-section .restaurant-main-section__box__important {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    width: 100%;
-  }
-  body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title {
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: space-between;
-    box-sizing: border-box;
-    border-top-left-radius: 100px;
-    border-top-right-radius: 100px;
-    background: linear-gradient(white, #eaeaea);
-    margin-top: -200px;
-    /* stlying for order btn for computer version*/
-  }
-  body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant__name_heart {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: space-between;
-    padding: 2% 5%;
-    font-family: Shrikhand;
-    font-size: larger;
-  }
-  body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant__name_heart .far {
-    font-size: x-large;
-  }
-  body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant--food--section {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    font-family: Roboto;
-    flex-wrap: wrap;
-    padding-left: 2%;
-    padding-bottom: 20px;
-  }
-  body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant--food--section .restaurant--courses--section {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    margin: 10px;
-  }
-  body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant--food--section .restaurant--courses--section .restaurant--dish {
-    margin: 3%;
-    font-size: large;
-  }
-  body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant--food--section .restaurant--courses--section .restaurant--dish .underline--h3 {
-    width: 50px;
-    height: 3px;
-    background-color: #99e2d0;
-    margin-top: -20px;
-    padding: 0;
-    margin-left: 0;
-  }
-  body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant--food--section .restaurant--courses--section .dish__menu__card {
-    white-space: nowrap;
-    display: flex;
-    flex-direction: row;
-    box-sizing: border-box;
-    border-radius: 20px;
-    box-shadow: 0px 5px 5px #D3D3D3;
-    background: white;
-    height: auto;
-    margin: 3%;
-    cursor: pointer;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    animation-name: slideFromTop;
-    animation-duration: 2.5s;
-    animation-fill-mode: backwards;
-  }
-  body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant--food--section .restaurant--courses--section .dish__menu__card:hover .card__check {
-    background-color: #99e2d0;
-  }
-  body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant--food--section .restaurant--courses--section .dish__menu__card:hover .order__details .dish__price {
-    transform: translateX(-200%);
-  }
-  body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant--food--section .restaurant--courses--section .dish__menu__card:hover .card__check .fas.fa-check-circle {
-    animation: rotateIcon 0.2s linear 1;
-  }
-  body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant--food--section .restaurant--courses--section .dish__menu__card .order__details {
-    display: flex;
-    flex-direction: column;
-    padding: 0 4%;
-    width: 100%;
-  }
-  body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant--food--section .restaurant--courses--section .dish__menu__card .order__details .restaurant__menu__dish {
-    padding: 0 2%;
-  }
-  body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant--food--section .restaurant--courses--section .dish__menu__card .order__details .restaurant__menu__ingridents {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 2%;
-  }
-  body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant--food--section .restaurant--courses--section .dish__menu__card .order__details .dish__price {
-    margin-right: -70px;
-    transition: transform 200ms;
-    font-weight: bold;
-  }
-  body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant--food--section .restaurant--courses--section .dish__menu__card .card__check {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent;
-    transition: background-color 200ms;
-    font-size: x-large;
-  }
-  body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant--food--section .restaurant--courses--section .dish__menu__card .card__check .fas.fa-check-circle {
-    color: white;
-    width: 70px;
-    text-align: center;
-    align-items: center;
-  }
-  body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .order__btn__section {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    width: 100%;
-    align-items: center;
-    padding-bottom: 50px;
-  }
-  body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .order__btn__section .explore-btn {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    height: 45px;
-    color: white;
-    border-radius: 50px;
-    box-shadow: 4px 4px 2px #D3D3D3;
-    width: 150px;
-    max-width: 500px;
-    cursor: pointer;
-    transition: 250ms;
-    background: linear-gradient(170deg, #ff79da, #9356dc);
-    border: none;
-    font-size: large;
-    padding: 15px;
-  }
-  /*styling footer for ohmyfood website*/
-  #footer__ohmyfood {
-    display: flex;
-    flex-direction: column;
-    font-family: Roboto;
-    width: 100%;
-    color: white;
-    background-color: #353535;
-    padding-bottom: 3%;
-  }
-  #footer__ohmyfood .footer-logo {
-    font-family: Shrikhand;
-    font-size: xx-large;
-    padding-left: 3%;
-  }
-  #footer__ohmyfood .footer-info {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    text-align: center;
-    gap: 1%;
-    padding-left: 3%;
-  }
-  #footer__ohmyfood .contact_address {
-    text-decoration: none;
-    color: white;
-    padding-left: 3%;
-  }
-  #footer__ohmyfood .footer_legal {
-    padding-left: 3%;
-  }
 }
+/* styling for restaurants website page*/
+/* styling for header-restaurants*/
+body {
+  overflow-x: hidden;
+  /*styling footer for ohmyfood website*/
+}
+body #header-restaurants {
+  width: 100% !important;
+  padding: 40px;
+}
+body #header-restaurants .header-restaurants__link {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  color: black !important;
+}
+body #header-restaurants .header-restaurants__link .header-restaurants__link_logo {
+  font-family: Shrikhand;
+  position: absolute;
+  left: 40%;
+  transform: translate(-20%, 0%);
+}
+body #restaurant-main-section {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+}
+body #restaurant-main-section .restaurant-main-section__img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 40%;
+}
+body #restaurant-main-section .restaurant-main-section__box__important {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 100%;
+}
+body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title {
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border-top-left-radius: 100px;
+  border-top-right-radius: 100px;
+  background: linear-gradient(white, #eaeaea);
+  margin-top: -200px;
+  /* stlying for order btn for computer version*/
+}
+body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant__name_heart {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+  padding: 2% 5%;
+  font-family: Shrikhand;
+  font-size: larger;
+}
+body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant__name_heart .far {
+  font-size: x-large;
+}
+body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant--food--section {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  font-family: Roboto;
+  flex-wrap: wrap;
+  padding-left: 2%;
+  padding-bottom: 20px;
+}
+body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant--food--section .restaurant--courses--section {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: 10px;
+}
+body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant--food--section .restaurant--courses--section .restaurant--dish {
+  margin: 3%;
+  font-size: large;
+}
+body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant--food--section .restaurant--courses--section .restaurant--dish .underline--h3 {
+  width: 50px;
+  height: 3px;
+  background-color: #99e2d0;
+  margin-top: -20px;
+  padding: 0;
+  margin-left: 0;
+}
+body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant--food--section .restaurant--courses--section .dish__menu__card {
+  white-space: nowrap;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  border-radius: 20px;
+  box-shadow: 0px 5px 5px #D3D3D3;
+  background: white;
+  height: auto;
+  margin: 3%;
+  cursor: pointer;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  animation-name: slideFromTop;
+  animation-duration: 2.5s;
+  animation-fill-mode: backwards;
+}
+body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant--food--section .restaurant--courses--section .dish__menu__card:hover .card__check {
+  background-color: #99e2d0;
+}
+body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant--food--section .restaurant--courses--section .dish__menu__card:hover .order__details .dish__price {
+  transform: translateX(-200%);
+}
+body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant--food--section .restaurant--courses--section .dish__menu__card:hover .card__check .fas.fa-check-circle {
+  animation: rotateIcon 0.2s linear 1;
+}
+body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant--food--section .restaurant--courses--section .dish__menu__card .order__details {
+  display: flex;
+  flex-direction: column;
+  padding: 0 4%;
+  width: 100%;
+}
+body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant--food--section .restaurant--courses--section .dish__menu__card .order__details .restaurant__menu__dish {
+  padding: 0 2%;
+}
+body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant--food--section .restaurant--courses--section .dish__menu__card .order__details .restaurant__menu__ingridents {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2%;
+}
+body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant--food--section .restaurant--courses--section .dish__menu__card .order__details .dish__price {
+  margin-right: -70px;
+  transition: transform 200ms;
+  font-weight: bold;
+}
+body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant--food--section .restaurant--courses--section .dish__menu__card .card__check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  transition: background-color 200ms;
+  font-size: x-large;
+}
+body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .restaurant--food--section .restaurant--courses--section .dish__menu__card .card__check .fas.fa-check-circle {
+  color: white;
+  width: 70px;
+  text-align: center;
+  align-items: center;
+}
+body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .order__btn__section {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  align-items: center;
+  padding-bottom: 50px;
+}
+body #restaurant-main-section .restaurant-main-section__box__important .restaurant-main-section__box__title .order__btn__section .explore-btn {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  height: 45px;
+  color: white;
+  border-radius: 50px;
+  box-shadow: 4px 4px 2px #D3D3D3;
+  width: 150px;
+  max-width: 500px;
+  cursor: pointer;
+  transition: 250ms;
+  background: linear-gradient(170deg, #ff79da, #9356dc);
+  border: none;
+  font-size: large;
+  padding: 15px;
+}
+body #footer__ohmyfood {
+  display: flex;
+  flex-direction: column;
+  font-family: Roboto;
+  width: 100%;
+  color: white;
+  background-color: #353535;
+  padding-bottom: 3%;
+}
+body #footer__ohmyfood .footer-logo {
+  font-family: Shrikhand;
+  font-size: xx-large;
+  padding-left: 3%;
+}
+body #footer__ohmyfood .footer-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  gap: 1%;
+  padding-left: 3%;
+}
+body #footer__ohmyfood .contact_address {
+  text-decoration: none;
+  color: white;
+  padding-left: 3%;
+}
+body #footer__ohmyfood .footer_legal {
+  padding-left: 3%;
+}
+
 @keyframes slideFromTop {
   0% {
     transform: translateY(10%);
@@ -559,7 +643,6 @@
     margin: 0 5%;
     border-radius: 50px !important;
     padding: 0 30px !important;
-    font-size: vw;
     cursor: pointer;
   }
   body #main-section #website-methodology .selection .selection-box .selection-box__number {

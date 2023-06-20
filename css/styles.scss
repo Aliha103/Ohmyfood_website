@@ -9,6 +9,104 @@ $footer-color: white;
 
 
 
+/* styling for loader of main page */
+#loader {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: hsla(0, 0%, 100%, .9);
+    animation: loader .01s;
+    animation-delay: 1.75s;
+    animation-fill-mode: forwards;
+    z-index: 10000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .loader__itemContainer {
+        display: flex;
+        width: 5rem;
+        justify-content: space-between;
+
+        .loader__item--1 {
+            background-color: #9356dc;
+        }
+
+        .loader__item--2 {
+            background-color: #ff79da;
+            animation-delay: .25s;
+        }
+
+        .loader__item--3 {
+            background-color: #99e2d0;
+            animation-delay: .5s;
+        }
+
+        .loader__item {
+            height: 1rem;
+            width: 1rem;
+            border-radius: 1rem;
+            animation: jump 1s;
+            animation-iteration-count: 1;
+        }
+
+    }
+
+}
+
+@keyframes loader {
+    100% {
+        opacity: 0;
+        z-index: -10;
+
+    }
+
+}
+
+@keyframes jump {
+    0% {
+        transform: translateY(0);
+    }
+
+    25% {
+        transform: translateY(0.5rem);
+    }
+
+    75% {
+        transform: translateY(-0.5rem);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+header,
+main,
+footer {
+    animation-name: opacity;
+    animation-duration: 2500ms;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 0s;
+    animation-timing-function: cubic-bezier(1, -0.25, 0.93, 0.59);
+}
+
+@keyframes opacity {
+
+
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
 
 
 /* main with location, presentation,steps and restaurants section */
@@ -19,14 +117,18 @@ $footer-color: white;
     body {
         overflow-x: hidden;
         width: 100%;
+        scroll-behavior: smooth;
 
-        /* styling for ohmyfood website main page logo for mobile version */
-        #header-index h1 {
+        /*styling for ohmyfood website loading*/
+        /* styling for ohmyfood website main page logo for computer version */
+        #header-index {
             text-align: center;
             padding: 1% 0;
+            z-index: 1000;
 
             .site-logo {
                 width: 50vw;
+                z-index: 1000;
             }
         }
 
@@ -271,222 +373,231 @@ $footer-color: white;
                     }
                 }
             }
+
+
+
+
         }
+
+
 
     }
 
 
-
-    /* styling for restaurants website page*/
-
-    /* styling for header-restaurants*/
-
-    body {
-        overflow-x: hidden;
+}
 
 
-        #header-restaurants {
-            width: 100% !important;
-            padding: 40px;
 
-            .header-restaurants__link {
-                display: flex;
-                align-items: center;
-                text-align: center;
-                text-decoration: none;
-                color: black !important;
+/* styling for restaurants website page*/
 
-                .header-restaurants__link_logo {
-                    font-family: $logo-font;
-                    position: absolute;
-                    left: 40%;
-                    transform: translate(-20%, 0%);
-                }
+/* styling for header-restaurants*/
+
+body {
+    overflow-x: hidden;
+
+
+    #header-restaurants {
+        width: 100% !important;
+        padding: 40px;
+
+        .header-restaurants__link {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+            color: black !important;
+
+            .header-restaurants__link_logo {
+                font-family: $logo-font;
+                position: absolute;
+                left: 40%;
+                transform: translate(-20%, 0%);
             }
         }
+    }
 
-        #restaurant-main-section {
+    #restaurant-main-section {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
+
+        .restaurant-main-section__img {
+            object-fit: cover;
+            width: 100%;
+            height: 40%;
+        }
+
+        .restaurant-main-section__box__important {
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
             width: 100%;
 
-            .restaurant-main-section__img {
-                object-fit: cover;
-                width: 100%;
-                height: 40%;
-            }
-
-            .restaurant-main-section__box__important {
-                display: flex;
-                flex-direction: column;
+            .restaurant-main-section__box__title {
                 flex-wrap: wrap;
                 width: 100%;
+                justify-content: space-between;
+                box-sizing: border-box;
+                border-top-left-radius: 100px;
+                border-top-right-radius: 100px;
+                background: $main-background;
+                margin-top: -200px;
 
-                .restaurant-main-section__box__title {
-                    flex-wrap: wrap;
-                    width: 100%;
+                .restaurant__name_heart {
+                    display: flex;
+                    align-items: center;
+                    text-align: center;
                     justify-content: space-between;
-                    box-sizing: border-box;
-                    border-top-left-radius: 100px;
-                    border-top-right-radius: 100px;
-                    background: $main-background;
-                    margin-top: -200px;
+                    padding: 2% 5%;
+                    font-family: $logo-font;
+                    font-size: larger;
 
-                    .restaurant__name_heart {
-                        display: flex;
-                        align-items: center;
-                        text-align: center;
-                        justify-content: space-between;
-                        padding: 2% 5%;
-                        font-family: $logo-font;
-                        font-size: larger;
-
-                        .far {
-                            font-size: x-large;
-                        }
+                    .far {
+                        font-size: x-large;
                     }
+                }
 
-                    .restaurant--food--section {
+                .restaurant--food--section {
+                    display: flex;
+                    flex-direction: row;
+                    width: 100%;
+                    font-family: $text-font;
+                    flex-wrap: wrap;
+                    padding-left: 2%;
+                    padding-bottom: 20px;
+
+                    .restaurant--courses--section {
                         display: flex;
-                        flex-direction: row;
-                        width: 100%;
-                        font-family: $text-font;
-                        flex-wrap: wrap;
-                        padding-left: 2%;
-                        padding-bottom: 20px;
+                        flex-direction: column;
+                        width: 30%;
+                        margin: 10px;
 
-                        .restaurant--courses--section {
-                            display: flex;
-                            flex-direction: column;
-                            width: 30%;
-                            margin: 10px;
+                        .restaurant--dish {
+                            margin: 3%;
+                            font-size: large;
 
-                            .restaurant--dish {
-                                margin: 3%;
-                                font-size: large;
-
-                                .underline--h3 {
-                                    width: 50px;
-                                    height: 3px;
-                                    background-color: #99e2d0;
-                                    margin-top: -20px;
-                                    padding: 0;
-                                    margin-left: 0;
-                                }
+                            .underline--h3 {
+                                width: 50px;
+                                height: 3px;
+                                background-color: #99e2d0;
+                                margin-top: -20px;
+                                padding: 0;
+                                margin-left: 0;
                             }
+                        }
 
-                            .dish__menu__card {
-                                white-space: nowrap;
-                                display: flex;
-                                flex-direction: row;
-                                box-sizing: border-box;
-                                border-radius: 20px;
-                                box-shadow: $box-shadow;
-                                background: white;
-                                height: auto;
-                                margin: 3%;
-                                cursor: pointer;
-                                text-overflow: ellipsis;
-                                overflow: hidden;
+                        .dish__menu__card {
+                            white-space: nowrap;
+                            display: flex;
+                            flex-direction: row;
+                            box-sizing: border-box;
+                            border-radius: 20px;
+                            box-shadow: $box-shadow;
+                            background: white;
+                            height: auto;
+                            margin: 3%;
+                            cursor: pointer;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
 
-                                animation-name: slideFromTop;
-                                animation-duration: 2.5s;
-                                animation-fill-mode: backwards;
+                            animation-name: slideFromTop;
+                            animation-duration: 2.5s;
+                            animation-fill-mode: backwards;
 
-                                &:hover {
-                                    .card__check {
-                                        background-color: #99e2d0;
-                                    }
-
-                                    .order__details {
-                                        .dish__price {
-                                            transform: translateX(-200%);
-                                        }
-                                    }
-
-                                    .card__check .fas.fa-check-circle {
-                                        animation: rotateIcon 0.2s linear 1;
-                                    }
+                            &:hover {
+                                .card__check {
+                                    background-color: #99e2d0;
                                 }
 
                                 .order__details {
-                                    display: flex;
-                                    flex-direction: column;
-                                    padding: 0 4%;
-                                    width: 100%;
-
-                                    .restaurant__menu__dish {
-                                        padding: 0 2%;
-                                    }
-
-                                    .restaurant__menu__ingridents {
-                                        display: flex;
-                                        flex-direction: row;
-                                        align-items: center;
-                                        justify-content: space-between;
-                                        padding: 0 2%;
-                                    }
-
                                     .dish__price {
-                                        margin-right: -70px;
-                                        transition: transform 200ms;
-                                        font-weight: bold;
+                                        transform: translateX(-200%);
                                     }
                                 }
 
-                                .card__check {
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
-                                    background-color: transparent;
-                                    transition: background-color 200ms;
-                                    font-size: x-large;
+                                .card__check .fas.fa-check-circle {
+                                    animation: rotateIcon 0.2s linear 1;
+                                }
+                            }
 
-                                    .fas.fa-check-circle {
-                                        color: white;
-                                        width: 70px;
-                                        text-align: center;
-                                        align-items: center;
-                                    }
+                            .order__details {
+                                display: flex;
+                                flex-direction: column;
+                                padding: 0 4%;
+                                width: 100%;
+
+                                .restaurant__menu__dish {
+                                    padding: 0 2%;
+                                }
+
+                                .restaurant__menu__ingridents {
+                                    display: flex;
+                                    flex-direction: row;
+                                    align-items: center;
+                                    justify-content: space-between;
+                                    padding: 0 2%;
+                                }
+
+                                .dish__price {
+                                    margin-right: -70px;
+                                    transition: transform 200ms;
+                                    font-weight: bold;
+                                }
+                            }
+
+                            .card__check {
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                background-color: transparent;
+                                transition: background-color 200ms;
+                                font-size: x-large;
+
+                                .fas.fa-check-circle {
+                                    color: white;
+                                    width: 70px;
+                                    text-align: center;
+                                    align-items: center;
                                 }
                             }
                         }
                     }
+                }
 
-                    /* stlying for order btn for computer version*/
-                    .order__btn__section {
+                /* stlying for order btn for computer version*/
+                .order__btn__section {
+                    display: flex;
+                    justify-content: center;
+                    text-align: center;
+                    align-items: center;
+                    width: 100%;
+                    align-items: center;
+                    padding-bottom: 50px;
+
+                    .explore-btn {
                         display: flex;
                         justify-content: center;
                         text-align: center;
                         align-items: center;
-                        width: 100%;
-                        align-items: center;
-                        padding-bottom: 50px;
-
-                        .explore-btn {
-                            display: flex;
-                            justify-content: center;
-                            text-align: center;
-                            align-items: center;
-                            height: 45px;
-                            color: white;
-                            border-radius: 50px;
-                            box-shadow: 4px 4px 2px #D3D3D3;
-                            width: 150px;
-                            max-width: 500px;
-                            cursor: pointer;
-                            transition: 250ms;
-                            background: linear-gradient(170deg, #ff79da, #9356dc);
-                            border: none;
-                            font-size: large;
-                            padding: 15px;
-                        }
+                        height: 45px;
+                        color: white;
+                        border-radius: 50px;
+                        box-shadow: 4px 4px 2px #D3D3D3;
+                        width: 150px;
+                        max-width: 500px;
+                        cursor: pointer;
+                        transition: 250ms;
+                        background: linear-gradient(170deg, #ff79da, #9356dc);
+                        border: none;
+                        font-size: large;
+                        padding: 15px;
                     }
                 }
             }
         }
     }
+
 
     /*styling footer for ohmyfood website*/
     #footer__ohmyfood {
@@ -694,7 +805,6 @@ $footer-color: white;
                         margin: 0 5%;
                         border-radius: 50px !important;
                         padding: 0 30px !important;
-                        font-size: vw;
                         cursor: pointer;
 
 
