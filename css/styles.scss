@@ -107,30 +107,242 @@ $footer-color: white;
     }
 }
 
+.entrees--menu {
+    animation: appear 1000ms ease forwards;
+    animation-delay: 0ms;
+}
 
-/* this keyframe for restuarant page menus */
+.main_dish--menu {
+    animation: appear 1000ms ease forwards;
+    animation-delay: 500ms;
+}
 
-@keyframes slideFromTop {
-    0% {
-        transform: translateY(0%);
-        opacity: 0;
+.dessert--menu {
+    animation: appear 1000ms ease forwards;
+    animation-delay: 1s;
+}
+
+#restaurant-main-section {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .restaurant-main-section__img {
+        object-fit: cover;
+        width: 100%;
+        height: 40%;
     }
 
-    100% {
-        transform: translateY(10%);
-        opacity: 1;
+    .restaurant-main-section__box__important {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: 100%;
+
+        .restaurant-main-section__box__title {
+            width: 100%;
+            justify-content: space-between;
+            box-sizing: border-box;
+            border-top-left-radius: 100px;
+            border-top-right-radius: 100px;
+            background: $main-background;
+            margin-top: -200px;
+
+            .restaurant__name_heart {
+                display: flex;
+                align-items: center;
+                text-align: center;
+                justify-content: space-between;
+                padding: 2% 5%;
+                font-family: $logo-font;
+                font-size: larger;
+
+                .far {
+                    font-size: x-large;
+                }
+            }
+        }
+
+        /* styling for restaurant menu */
+        #menu--section {
+            display: flex;
+            flex-direction: row;
+            flex: 100%;
+
+            /* styling for ENTREES menu */
+            .entrees--menu,
+            .main_dish--menu,
+            .dessert--menu {
+                display: flex;
+                flex-direction: column;
+                flex: 100%;
+
+                &__title {
+                    display: flex;
+                    flex-direction: column;
+                    margin: 3%;
+                    font-size: 1.5vw;
+                    font-family: $text-font;
+
+                    .underline--h3 {
+                        display: flex;
+                        width: 4.7vw;
+                        height: 0.3vw;
+                        background-color: #99e2d0;
+                        margin-top: -1.8vw;
+                        padding: 0;
+                        margin-left: 0;
+                    }
+                }
+
+                /* styling for menu card */
+                &--cards .card {
+                    animation-name: appear;
+                }
+
+                @keyframes appear {
+                    from {
+                        transform: translateY(-100px);
+                        opacity: 0;
+                    }
+
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+
+                .card {
+                    background-color: white;
+                    justify-content: center;
+                    align-items: center;
+                    box-shadow: 2px 2px 2px lightgrey;
+                    border-radius: 20px;
+                    height: 4.3em;
+                    margin: 1rem;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    transition: all 2000ms;
+                    cursor: pointer;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    font-size: $text-font;
+
+                    .menu__details {
+                        display: flex;
+                        flex: 100%;
+                        white-space: nowrap;
+                        flex-direction: column;
+                        font-family: $text-font;
+
+                        transition: all 700ms;
+                        margin-left: 5%;
+
+                        .menu__dish {
+
+                            padding-top: 5%;
+                        }
+
+                        .menu__ingridents {
+                            display: flex;
+                            flex-direction: row;
+                            justify-content: space-between;
+                            overflow: hidden;
+                            white-space: nowrap;
+                            text-overflow: ellipsis;
+                            padding-bottom: 5%;
+                            margin-top: -5%;
+                            width: auto;
+
+                            .dish__price {
+                                font-weight: bold;
+                                overflow: visible;
+
+                            }
+
+                            p {
+                                overflow: hidden;
+                                white-space: nowrap;
+                                text-overflow: ellipsis;
+                                padding-right: 5%;
+                            }
+
+                        }
+                    }
+                }
+
+                .card__check {
+                    color: #f6f6f6;
+                    margin: 0;
+                    background-color: #99e2d0;
+                    font-size: xx-large;
+                    text-align: center;
+                    max-height: 100% !important;
+                    height: 6vw;
+                    line-height: 2.1em;
+                    white-space: nowrap;
+                    border-top-right-radius: 20px 20px;
+                    border-bottom-right-radius: 20px 20px;
+                    transform: translateX(100px);
+                    cursor: pointer;
+                    transition: all 700ms;
+                }
+
+                .card:hover>.card__check {
+                    flex: 25%;
+                    transform: translateX(0px);
+                    background-color: #99e2d0;
+                    cursor: pointer;
+                    color: #f6f6f6;
+                }
+
+                .card:hover>.card__text {
+                    flex: 75%;
+                }
+
+                .card:hover .fa-check-circle {
+                    transform: rotate(0deg);
+                }
+
+                .fa-check-circle {
+                    transform: rotate(359deg);
+                    transition: transform 700ms;
+                }
+            }
+        }
+
+        .order__btn__section {
+            display: flex;
+            justify-content: center;
+            padding: 3% 0;
+
+            .explore-btn {
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                align-items: center;
+                height: 3vw;
+                width: 9vw;
+                color: white;
+                border-radius: 50px;
+                box-shadow: 4px 4px 2px #D3D3D3;
+                max-width: 30vw;
+                cursor: pointer;
+                transition: 250ms;
+                background: linear-gradient(170deg, #ff79da, #9356dc);
+                border: none;
+                font-size: x-large;
+                padding: 15px;
+                font-family: $text-font;
+            }
+        }
+
     }
 }
 
-@keyframes rotateIcon {
-    0% {
-        transform: rotate(-45deg);
-    }
 
-    100% {
-        transform: rotate(0deg);
-    }
-}
 
 
 /* styling for main page of ohmyfood website for computer screens */
@@ -363,46 +575,7 @@ $footer-color: white;
                                 color: black;
                             }
 
-                            .section-restaurants__details__heart {
-                                font-size: x-large;
-                                height: fit-content !important;
-                                display: flex;
-                                margin-top: 20px;
-                                cursor: pointer;
 
-                                i {
-                                    display: block;
-                                    transition: color 2s;
-                                }
-
-                                & i.fas {
-                                    display: none;
-                                }
-
-                                &:hover i.far {
-                                    display: none;
-                                }
-
-                                &:hover i.fas {
-                                    display: block;
-                                    color: #9356dc;
-                                    white-space: nowrap;
-                                    overflow: hidden;
-                                    animation: fillHeart 0.3s forwards;
-
-                                }
-
-
-                                @keyframes fillHeart {
-                                    0% {
-                                        width: 0;
-                                    }
-
-                                    100% {
-                                        width: 100%;
-                                    }
-                                }
-                            }
 
 
                         }
@@ -410,6 +583,41 @@ $footer-color: white;
 
                     }
                 }
+            }
+        }
+
+        #footer__ohmyfood {
+            display: flex;
+            flex-direction: column;
+            font-family: $text-font;
+            width: 100%;
+            color: $footer-color;
+            background-color: $footer-background;
+            padding-bottom: 3%;
+
+            .footer-logo {
+                font-family: $logo-font;
+                font-size: xx-large;
+                padding-left: 3%;
+            }
+
+            .footer-info {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                text-align: center;
+                gap: 1%;
+                padding-left: 3%;
+            }
+
+            .contact_address {
+                text-decoration: none;
+                color: $footer-color;
+                padding-left: 3%;
+            }
+
+            .footer_legal {
+                padding-left: 3%;
             }
         }
     }
@@ -452,188 +660,37 @@ $footer-color: white;
 
         /* styling for main section of restaurants pages */
 
-        #restaurant-main-section {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: wrap;
-            width: 100%;
+        .menu {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 1fr;
+        }
 
-            .restaurant-main-section__img {
-                object-fit: cover;
-                width: 100%;
-                height: 40%;
+        .menu h3 {
+            margin: 0 1rem !important;
+        }
+
+        .menu h4,
+        .menu p {
+            padding: 0.25rem 1rem !important;
+        }
+
+        .underline-h3 {
+            margin-left: 1rem !important;
+        }
+
+        .card {
+            max-width: 30vw !important;
+
+            .card__text {
+                padding: 0;
             }
 
-            .restaurant-main-section__box__important {
-                display: flex;
-                flex-direction: column;
-                flex-wrap: wrap;
-                width: 100%;
-
-                .restaurant-main-section__box__title {
-                    flex-wrap: wrap;
-                    width: 100%;
-                    justify-content: space-between;
-                    box-sizing: border-box;
-                    border-top-left-radius: 100px;
-                    border-top-right-radius: 100px;
-                    background: $main-background;
-                    margin-top: -200px;
-
-                    .restaurant__name_heart {
-                        display: flex;
-                        align-items: center;
-                        text-align: center;
-                        justify-content: space-between;
-                        padding: 2% 5%;
-                        font-family: $logo-font;
-                        font-size: larger;
-
-                        .far {
-                            font-size: x-large;
-                        }
-                    }
-
-                    .restaurant--food--section {
-                        display: flex;
-                        flex-direction: row;
-                        width: 100%;
-                        font-family: $text-font;
-                        flex-wrap: wrap;
-                        padding-left: 2%;
-                        padding-bottom: 20px;
-
-                        .restaurant--courses--section {
-                            display: flex;
-                            flex-direction: column;
-                            width: 30%;
-                            margin: 10px;
-
-                            .restaurant--dish {
-                                margin: 3%;
-                                font-size: large;
-
-                                .underline--h3 {
-                                    width: 50px;
-                                    height: 3px;
-                                    background-color: #99e2d0;
-                                    margin-top: -20px;
-                                    padding: 0;
-                                    margin-left: 0;
-                                }
-                            }
-
-                            .dish__menu__card {
-                                white-space: nowrap;
-                                display: flex;
-                                flex-direction: row;
-                                box-sizing: border-box;
-                                border-radius: 20px;
-                                box-shadow: $box-shadow;
-                                background: white;
-                                height: auto;
-                                margin: 3%;
-                                cursor: pointer;
-                                text-overflow: ellipsis;
-                                overflow: hidden;
-
-                                animation-name: slideFromTop;
-                                animation-duration: 2.5s;
-                                animation-fill-mode: forwards;
-                                animation-delay: 0s;
-
-                                &:hover {
-                                    .card__check {
-                                        background-color: #99e2d0;
-                                    }
-
-                                    .order__details {
-                                        .dish__price {
-                                            transform: translateX(-200%);
-                                        }
-                                    }
-
-                                    .card__check .fas.fa-check-circle {
-                                        animation: rotateIcon 0.2s linear 1;
-                                    }
-                                }
-
-                                .order__details {
-                                    display: flex;
-                                    flex-direction: column;
-                                    padding: 0 4%;
-                                    width: 100%;
-
-
-                                    .restaurant__menu__dish {
-                                        padding: 0 2%;
-                                    }
-
-                                    .restaurant__menu__ingridents {
-                                        display: flex;
-                                        flex-direction: row;
-                                        align-items: center;
-                                        justify-content: space-between;
-                                        padding: 0 2%;
-                                    }
-
-                                    .dish__price {
-                                        margin-right: -70px;
-                                        transition: transform 200ms;
-                                        font-weight: bold;
-                                    }
-                                }
-
-                                .card__check {
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
-                                    background-color: transparent;
-                                    transition: background-color 200ms;
-                                    font-size: x-large;
-
-                                    .fas.fa-check-circle {
-                                        color: white;
-                                        width: 70px;
-                                        text-align: center;
-                                        align-items: center;
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    /* stlying for order btn for computer version*/
-                    .order__btn__section {
-                        display: flex;
-                        justify-content: center;
-                        text-align: center;
-                        align-items: center;
-                        width: 100%;
-                        align-items: center;
-                        padding-bottom: 50px;
-
-                        .explore-btn {
-                            display: flex;
-                            justify-content: center;
-                            text-align: center;
-                            align-items: center;
-                            height: 4vw;
-                            color: white;
-                            border-radius: 50px;
-                            box-shadow: 4px 4px 2px #D3D3D3;
-                            width: 12vw;
-                            cursor: pointer;
-                            transition: 250ms;
-                            background: linear-gradient(170deg, #ff79da, #9356dc);
-                            border: none;
-                            font-size: x-large;
-                            padding: 15px;
-                        }
-                    }
-                }
+            .card__check {
+                height: 70px !important;
             }
         }
+
 
 
         /* styling for footer for restaurants of computer  screens  */
@@ -673,16 +730,18 @@ $footer-color: white;
         }
     }
 
+
 }
 
 
+/* styling for tablet screen which has screen resolution minimun 768px and maximum 998px */
 
-/* styling for main page of of ohmyfood website for tablet screens */
+@media only screen and (min-width: 768px) and (max-width:998px) {}
+
 
 
 
 /* Styling for main and restaurants pages for mobile screens */
-
 
 @media only screen and (max-width: 768px) {
 
@@ -1026,200 +1085,220 @@ $footer-color: white;
                         padding: 5% 7% 0% 7%;
                         font-family: $logo-font;
                         font-size: 3vw;
-
-                        .far {
-                            font-size: x-large;
-                        }
-                    }
-
-                    .restaurant--food--section {
-                        display: flex;
-                        flex-direction: column;
-                        width: 100%;
-                        font-family: $text-font;
-                        flex-wrap: wrap;
-
-                        .restaurant--courses--section {
-                            width: auto;
-                            margin: 10px;
-
-                            .restaurant--dish {
-                                margin: 3%;
-                                font-size: 4vw;
-
-                                .underline--h3 {
-                                    width: 12vw;
-                                    height: 0.7vw;
-                                    background-color: #99e2d0;
-                                    margin-top: -5vw;
-                                    padding: 0;
-                                    margin-left: 0;
-                                }
-                            }
-
-                            .dish__menu__card {
-                                white-space: nowrap;
-                                display: flex;
-                                box-sizing: border-box;
-                                border-radius: 20px;
-                                box-shadow: $box-shadow;
-                                background: white;
-                                height: auto;
-                                margin: 2%;
-                                cursor: pointer;
-                                text-overflow: ellipsis;
-                                overflow: hidden;
-
-                                animation-name: slideFromTop;
-                                animation-duration: 2.5s;
-                                animation-fill-mode: backwards;
-
-                                &:hover {
-                                    .card__check {
-                                        background-color: #99e2d0;
-                                    }
-
-                                    .order__details {
-                                        .dish__price {
-                                            transform: translateX(-200%);
-                                        }
-                                    }
-
-                                    .card__check .fas.fa-check-circle {
-                                        animation: rotateIcon 1s linear 1;
-                                    }
-                                }
-
-                                .order__details {
-                                    display: flex;
-                                    flex-direction: column;
-                                    padding: 0 2%;
-                                    width: 100%;
-                                    font-size: 3.5vw;
-
-                                    .restaurant__menu__dish {
-                                        padding: 0 1%;
-                                    }
-
-                                    .restaurant__menu__ingridents {
-                                        display: flex;
-                                        flex-direction: row;
-                                        flex-wrap: wrap;
-                                        white-space: nowrap;
-                                        align-items: center;
-                                        justify-content: space-between;
-                                        font-size: 3.5vw;
-                                        text-overflow: ellipsis;
-                                        overflow: hidden;
-
-                                        .main--ingridents {
-                                            white-space: nowrap;
-                                            text-overflow: ellipsis;
-                                            overflow: hidden;
-                                        }
-                                    }
-
-                                    .dish__price {
-                                        margin-right: -10%;
-                                        transition: transform 200ms;
-                                        font-weight: bold;
-                                    }
-                                }
-
-                                .card__check {
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
-                                    background-color: transparent;
-                                    transition: background-color 200ms;
-                                    font-size: x-large;
-
-                                    .fas.fa-check-circle {
-                                        color: white;
-                                        width: 70px;
-                                        text-align: center;
-                                        align-items: center;
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    .order__btn__section {
-                        display: flex;
-                        justify-content: center;
-                        text-align: center;
-                        align-items: center;
-                        width: 100%;
-                        align-items: center;
-                        padding-bottom: 50px;
-
-                        .explore-btn {
-                            display: flex;
-                            justify-content: center;
-                            text-align: center;
-                            align-items: center;
-                            height: 45px;
-                            color: white;
-                            border-radius: 50px;
-                            box-shadow: 4px 4px 2px #D3D3D3;
-                            width: 150px;
-                            max-width: 500px;
-                            cursor: pointer;
-                            transition: 250ms;
-                            background: linear-gradient(170deg, #ff79da, #9356dc);
-                            border: none;
-                            font-size: large;
-                            padding: 15px;
-                        }
                     }
                 }
             }
 
-        }
-
-         /* styling for footer for restaurants of mobile  screens  */
-         #restaurant__footer__ohmyfood {
-            display: flex;
-            flex-direction: column;
-            font-family: $text-font;
-            width: 100%;
-            color: $footer-color;
-            background-color: $footer-background;
-            padding-bottom: 3%;
-
-            .footer-logo {
-                font-family: $logo-font;
-                font-size: 8vw;
-                padding-left: 3%;
-            }
-
-            .footer-info {
+            #menu--section {
                 display: flex;
-                flex-direction: row;
-                align-items: center;
-                text-align: center;
-                gap: 1%;
-                padding-left: 3%;
-            }
+                flex-direction: column !important;
+                flex: 100%;
 
-            .contact_address {
-                text-decoration: none;
-                color: $footer-color;
-                padding-left: 3%;
-            }
+                /* styling for ENTREES menu */
+                .entrees--menu,
+                .main_dish--menu,
+                .dessert--menu {
+                    display: flex;
+                    flex-direction: column;
+                    flex: 100%;
 
-            .footer_legal {
-                padding-left: 3%;
+                    &__title {
+                        display: flex;
+                        flex: 100%;
+                        flex-direction: column;
+                        margin: 3%;
+                        font-size: 0.8em !important;
+
+                        .underline--h3 {
+                            display: flex;
+                            width: 40px !important;
+                            height: 3px !important;
+                            background-color: #99e2d0;
+                            margin-top: -15px !important;
+                            padding: 0;
+                            margin-left: 0 !important;
+                        }
+                    }
+
+                    /* styling for menu card */
+                    &--cards .card {
+                        animation-name: appear;
+                    }
+
+                    @keyframes appear {
+                        from {
+                            transform: translateY(-100px);
+                            opacity: 0;
+                        }
+
+                        to {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+                    }
+
+                    .card {
+                        background-color: white;
+                        justify-content: center;
+                        align-items: center;
+                        box-shadow: 2px 2px 2px lightgrey;
+                        border-radius: 20px;
+                        height: 4.3em;
+                        margin: 1rem;
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        transition: all 2000ms;
+                        cursor: pointer;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+
+                        .menu__details {
+                            display: flex;
+                            flex: 100%;
+                            white-space: nowrap;
+                            flex-direction: column;
+                            transition: all 700ms;
+                            margin-left: 5%;
+
+                            .menu__dish {
+                                padding-top: 5%;
+                            }
+
+                            .menu__ingridents {
+                                display: flex;
+                                flex-direction: row;
+                                justify-content: space-between !important;
+                                overflow: hidden !important;
+                                white-space: nowrap !important;
+                                text-overflow: ellipsis !important;
+                                padding-bottom: 5%;
+                                margin-top: -5%;
+                                width: 100% !important;
+
+                                .dish__price {
+                                    font-weight: bold;
+                                    
+                                }
+
+                                .ingridents__detail {
+                                    overflow: hidden;
+                                    white-space: nowrap;
+                                    text-overflow: ellipsis;
+                                    padding-right: 5%;
+                                    flex: 1;
+                                }
+                            }
+                        }
+                    }
+
+
+                    .card__check {
+                        color: #f6f6f6;
+                        margin: 0;
+                        background-color: #99e2d0;
+                        font-size: xx-large;
+                        text-align: center;
+                        max-height: 30vw !important;
+                        height: fit-content !important;
+                        line-height: 2.1em;
+                        white-space: nowrap;
+                        border-top-right-radius: 20px 20px;
+                        border-bottom-right-radius: 20px 20px;
+                        transform: translateX(100) !important;
+                        cursor: pointer;
+                        transition: all 700ms;
+                        
+                    }
+
+                    .card:hover>.card__check {
+                        flex: 25%;
+                        transform: translateX(0px);
+                        background-color: #99e2d0;
+                        cursor: pointer;
+                        color: #f6f6f6;
+                    }
+
+                    .card:hover>.card__text {
+                        flex: 75%;
+                    }
+
+                    .card:hover .fa-check-circle {
+                        transform: rotate(0deg);
+                    }
+
+                    .fa-check-circle {
+                        transform: rotate(359deg);
+                        transition: transform 700ms;
+                    }
+
+
+                }
             }
         }
-
     }
 
+    /* styling for footer for restaurants of mobile  screens  */
+    #restaurant__footer__ohmyfood {
+        display: flex;
+        flex-direction: column;
+        font-family: $text-font;
+        width: 100%;
+        color: $footer-color;
+        background-color: $footer-background;
+        padding-bottom: 3%;
 
+        .footer-logo {
+            font-family: $logo-font;
+            font-size: 8vw;
+            padding-left: 3%;
+        }
+
+        .footer-info {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            text-align: center;
+            gap: 1%;
+            padding-left: 3%;
+        }
+
+        .contact_address {
+            text-decoration: none;
+            color: $footer-color;
+            padding-left: 3%;
+        }
+
+        .footer_legal {
+            padding-left: 3%;
+        }
+    }
+
+    .order__btn__section {
+        display: flex;
+        justify-content: center;
+        padding: 3% 0;
+
+        .explore-btn {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            height: 6vw !important;
+            width: 7em !important;
+            color: white;
+            border-radius: 50px;
+            box-shadow: 4px 4px 2px #D3D3D3;
+            max-width: 30vw;
+            cursor: pointer;
+            transition: 250ms;
+            background: linear-gradient(170deg, #ff79da, #9356dc);
+            border: none;
+            font-size: x-large;
+            padding: 15px;
+        }
+    }
 }
-
-
 
 /* styling for footer which is same for all of screens  */
 #footer__ohmyfood {
@@ -1254,5 +1333,50 @@ $footer-color: white;
 
     .footer_legal {
         padding-left: 3%;
+    }
+}
+
+
+
+
+/* heart animation */
+.section-restaurants__details__heart {
+    font-size: x-large;
+    height: fit-content !important;
+    display: flex;
+    margin-top: 20px;
+    cursor: pointer;
+
+    i {
+        display: block;
+        transition: color 2s;
+    }
+
+    & i.fas {
+        display: none;
+    }
+
+    &:hover i.far {
+        display: none;
+    }
+
+    &:hover i.fas {
+        display: block;
+        color: #9356dc;
+        white-space: nowrap;
+        overflow: hidden;
+        animation: fillHeart 0.3s forwards;
+
+    }
+
+
+    @keyframes fillHeart {
+        0% {
+            width: 0;
+        }
+
+        100% {
+            width: 100%;
+        }
     }
 }
