@@ -130,10 +130,10 @@
 #restaurant-main-section .restaurant-main-section__box__title .menu__card_entrees .card, #restaurant-main-section .restaurant-main-section__box__title .menu__card_main .card, #restaurant-main-section .restaurant-main-section__box__title .menu__card_desserts .card {
   animation: appear 1000ms backwards;
 }
-#restaurant-main-section .restaurant-main-section__box__title .menu__card_entrees .card.menu__card_main, #restaurant-main-section .restaurant-main-section__box__title .menu__card_main .card.menu__card_main, #restaurant-main-section .restaurant-main-section__box__title .menu__card_desserts .card.menu__card_main {
+#restaurant-main-section .restaurant-main-section__box__title .menu__card_entrees .card.menu__card_main__main, #restaurant-main-section .restaurant-main-section__box__title .menu__card_main .card.menu__card_main__main, #restaurant-main-section .restaurant-main-section__box__title .menu__card_desserts .card.menu__card_main__main {
   animation-delay: 500ms;
 }
-#restaurant-main-section .restaurant-main-section__box__title .menu__card_entrees .card.menu__card_desserts, #restaurant-main-section .restaurant-main-section__box__title .menu__card_main .card.menu__card_desserts, #restaurant-main-section .restaurant-main-section__box__title .menu__card_desserts .card.menu__card_desserts {
+#restaurant-main-section .restaurant-main-section__box__title .menu__card_entrees .card.menu__card_desserts__desserts, #restaurant-main-section .restaurant-main-section__box__title .menu__card_main .card.menu__card_desserts__desserts, #restaurant-main-section .restaurant-main-section__box__title .menu__card_desserts .card.menu__card_desserts__desserts {
   animation-delay: 1s;
 }
 #restaurant-main-section .restaurant-main-section__box__title .menu .card {
@@ -490,10 +490,13 @@
     text-decoration: none;
     color: black !important;
   }
+  body #header-restaurants .header-restaurants__link .fa-arrow-left {
+    display: none;
+  }
   body #header-restaurants .header-restaurants__link .header-restaurants__link_logo {
     position: absolute;
     left: 40%;
-    transform: translate(-20%, 0%);
+    transform: translate(-20%, 30%);
   }
   body #header-restaurants .header-restaurants__link_logo {
     font-family: Shrikhand;
@@ -800,7 +803,6 @@
   }
   body #header-restaurants {
     width: 100% !important;
-    padding: 0 0px 20px 0px;
   }
   body #header-restaurants .header-restaurants__link {
     display: flex;
@@ -808,13 +810,25 @@
     text-align: center;
     text-decoration: none;
     color: black !important;
-    margin: 0 0 40px 10px;
-    font-size: 6vw;
+  }
+  body #header-restaurants .header-restaurants__link .fa-arrow-left {
+    padding-left: 5%;
+    font-size: 8vw;
+  }
+  body #header-restaurants .header-restaurants__link .header-restaurants__link_logo {
+    position: absolute;
+    display: flex;
+    font-size: 8vw;
+    text-align: center;
+    align-items: center;
+    left: 30%;
+    padding-top: 17%;
+    cursor: none;
   }
   body #header-restaurants .header-restaurants__link_logo {
     font-family: Shrikhand;
     text-align: center;
-    font-size: 8vw;
+    font-size: 5vw;
     margin-top: -60px;
     margin-bottom: -10px;
   }
