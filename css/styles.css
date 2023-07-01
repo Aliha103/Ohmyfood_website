@@ -275,7 +275,7 @@
     align-items: center;
     font-family: Roboto;
     box-sizing: border-box;
-    box-shadow: 0px -5px 5px #D3D3D3;
+    box-shadow: 0px -5px 5px lightgrey;
     gap: 2%;
     font-weight: bold;
   }
@@ -392,7 +392,7 @@
     padding-left: 2%;
   }
   body #main-section #section-restaurants .section-restaurants--cards .section-restaurants__card {
-    box-shadow: 0px 5px 5px #D3D3D3;
+    box-shadow: 0px 5px 5px lightgrey;
     margin: 1rem;
     border-radius: 20px !important;
     background-color: white;
@@ -489,6 +489,7 @@
     text-align: center;
     text-decoration: none;
     color: black !important;
+    padding: 2% 0;
   }
   body #header-restaurants .header-restaurants__link .fa-arrow-left {
     display: none;
@@ -593,7 +594,7 @@
     align-items: center;
     font-family: Roboto;
     box-sizing: border-box;
-    box-shadow: 0px -5px 5px #D3D3D3;
+    box-shadow: 0px -5px 5px lightgrey;
     gap: 2%;
     font-weight: bold;
   }
@@ -710,7 +711,7 @@
     height: 100%;
   }
   body #main-section #section-restaurants .section-restaurants--cards .section-restaurants__card {
-    box-shadow: 0px 5px 5px #D3D3D3;
+    box-shadow: 0px 5px 5px lightgrey;
     margin: 1rem;
     border-radius: 20px !important;
     background-color: white;
@@ -810,10 +811,11 @@
     text-align: center;
     text-decoration: none;
     color: black !important;
+    padding: 3% 0;
   }
   body #header-restaurants .header-restaurants__link .fa-arrow-left {
     padding-left: 5%;
-    font-size: 8vw;
+    font-size: 5vw;
   }
   body #header-restaurants .header-restaurants__link .header-restaurants__link_logo {
     position: absolute;
@@ -821,16 +823,11 @@
     font-size: 8vw;
     text-align: center;
     align-items: center;
-    left: 30%;
-    padding-top: 17%;
+    left: 35%;
     cursor: none;
-  }
-  body #header-restaurants .header-restaurants__link_logo {
     font-family: Shrikhand;
     text-align: center;
-    font-size: 5vw;
-    margin-top: -60px;
-    margin-bottom: -10px;
+    font-size: 6vw;
   }
   body .restaurant-main-section__box__title {
     display: flex;
