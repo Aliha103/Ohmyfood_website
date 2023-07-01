@@ -379,6 +379,10 @@ $footer-color: white;
                     border: none;
                     font-size: large;
                     padding: 15px;
+                    .explore-btn__title{
+                        text-decoration: none;
+                        color: white;
+                    }
                 }
             }
 
@@ -747,6 +751,11 @@ $footer-color: white;
                     border: none;
                     font-size: large;
                     padding: 15px;
+
+                    .explore-btn__title {
+                        text-decoration: none;
+                        color: white;
+                    }
                 }
             }
 
@@ -963,12 +972,12 @@ $footer-color: white;
                     text-align: center;
                     align-items: center;
                     left: 35%;
-                  
+
                     cursor: none;
                     font-family: $logo-font;
                     text-align: center;
                     font-size: 6vw;
-                
+
                 }
             }
         }

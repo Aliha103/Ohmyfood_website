@@ -316,6 +316,10 @@
     font-size: large;
     padding: 15px;
   }
+  body #main-section #description-website .explore-btn .explore-btn__title {
+    text-decoration: none;
+    color: white;
+  }
   body #main-section #website-methodology {
     display: block;
     list-style: none;
@@ -636,6 +640,10 @@
     border: none;
     font-size: large;
     padding: 15px;
+  }
+  body #main-section #description-website .explore-btn .explore-btn__title {
+    text-decoration: none;
+    color: white;
   }
   body #main-section #website-methodology {
     display: flex;
